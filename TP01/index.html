@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Notas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="js/index.js"></script>
+    <link rel="icon" href="img/logo1.png"> 
+</head>
+
+<body>
+    
+    <h2 class="titulo centrado" style="margin-top:1%;">Ingrese sus notas:</h2>
+    <div class="form centrado">
+        <input type="number" class="form formNota" name="matematica" id="matematica" placeholder="Matematica..." onkeyup="validarInputNotas('matematica')" style="background-color: red;">
+        <input type="number" class="form formNota" name="lengua" id="lengua" placeholder="Lengua..." onkeyup="validarInputNotas('lengua')" style="background-color: red;">
+        <input type="number" class="form formNota" name="EFSI" id="EFSI" placeholder="EFSI..." onkeyup="validarInputNotas('EFSI')" style="background-color: red;">
+    </div>
+    <div id="div-promedio" class="centrado" style="margin-top:3%;">
+        <h2 id="promedio-title">Resultados: </h2>
+    </div>
+    <div id="botonera" class="centrado" style="margin-top:2%;">
+        <button id="calcular-promedio" class="niceButton" onclick="calcularPromedio()">CALCULAR PROMEDIO</button>
+        <button id="mostrar-mayor-nota" class="niceButton" onclick="mayorNota()">MAYOR NOTA!</button>
+    </div>
+    <!--como mostramos el promedio? con una alert, texto, algo que aparezca cuando toca el boton?-->
+
+    <footer class="border-top page-footer font-small pt-4" style="margin-top:10%;">
+        <div class="container">
+            <h5 class="text-uppercase text-center">Análisis notas 2022</h5>
+            <p class="text-center">Matias Rapoport y Dalila Orbaj</p>
+            <p class="footer-copyright text-center py-3 text-muted">Todos Los Derechos Reservados &copy; 2022
+            </p>
+        </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
