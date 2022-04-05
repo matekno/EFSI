@@ -6,7 +6,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <link rel="stylesheet" href="css/index.css">
-    <script src="js/index.js"></script>
     <link rel="icon" href="img/logo.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
@@ -27,7 +26,7 @@
         <button id="add-todo" class="niceButton" data-toggle="modal" data-target="#modalToDo">AGREGAR TAREA</button>
 
         <div class="modal fade  col-11" id="modalToDo" tabindex="-1" role="dialog" aria-labelledby="modalToDoLabel"
-            aria-hidden="true">
+            aria-hidden="true" id="myModal">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -37,27 +36,24 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        <form>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Tarea..." id="task-name">
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Descripcion..."
-                                    id="task-description">
-                            </div>
-                            <button id="save-task" class="niceButton">GUARDAR</button>
-                        </form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Tarea..." id="task-name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Descripcion..." id="task-description">
+                        </div>
+                        <button id="save-task" class="niceButton" onclick="GuardarTodo();" data-dismiss="modal">GUARDAR</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        
+
     <div class="centrado col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11 mt-5">
 
-        <img src="/img/background.png" class="mt-5 col-11" alt="Paper note background" >
+        <img src="/img/background.png" class="mt-5 col-11" alt="Paper note background">
     </div>
-        <ul id="toDosList">
+    <ul id="toDosList">
     </ul>
 
 
@@ -69,6 +65,7 @@
         </div>
         -->
 
+    <script src="js/Todo.js"></script>
     <script src="js/index.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
