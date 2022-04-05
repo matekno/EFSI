@@ -1,14 +1,14 @@
-class Todo {
+/*class Todo {
     constructor(name, desc) {
         this.name = name;
         this.desc = desc;
-        const timestamp = new Date().toLocaleString(); // 11/16/2015, 11:18:48 PM
+        const timestamp = new Date().toLocaleString();
         this.timestamp = timestamp;
         this.completed = false;
         this.id = null;
     }
 }
-
+*/
 
 let todos = [];
 
@@ -62,7 +62,36 @@ function MostrarTodo(todo) {
 
     div_todos.appendChild(div);
 }
+/*
+https://www.w3schools.com/howto/howto_js_todolist.asp
 
+
+function newElement() {
+    var li = document.createElement("li");
+    var inputValue = document.getElementById("task-name").value;
+    var t = document.createTextNode(inputValue);
+    li.appendChild(t);
+    if (inputValue === '') {
+      alert("You must write something!");
+    } else {
+      document.getElementById("toDosList").appendChild(li);
+    }
+    document.getElementById("task-name").value = "";
+  
+    var span = document.createElement("SPAN");
+    var txt = document.createTextNode("\u00D7");
+    span.className = "close";
+    span.appendChild(txt);
+    li.appendChild(span);
+  
+    for (i = 0; i < close.length; i++) {
+      close[i].onclick = function() {
+        var div = this.parentElement;
+        div.style.display = "none";
+      }
+    }
+  }
+*/
 
 
 
