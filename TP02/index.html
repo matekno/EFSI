@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>To Do List</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="icon" href="img/logo.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
+
+    </head>
+
+<div class="header">
+    <h1>TU TO DO LIST</h1>
+    <p>¡Mantenete organizado!</p>
+</div>
+
+<body>
+
+
+    <div id="todo-list sameLine" class="centrado mt-5">
+
+        <div id="todos">
+        </div>
+        <button id="add-todo" class="niceButton" data-toggle="modal" data-target="#modalToDo">AGREGAR TAREA</button>
+        <button id="fastest-todo" style="background-color: rgb(12, 92, 211);" class="niceButton", onclick="MostrarTodoMasRapido()">TAREA MAS RÁPIDA</button>
+        <div class="modal fade  col-11" id="modalToDo" tabindex="-1" role="dialog" aria-labelledby="modalToDoLabel"
+            aria-hidden="true" id="myModal">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalToDoLabel">Añadir tarea</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Tarea..." id="task-name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Descripcion..." id="task-description">
+                        </div>
+                        <button id="save-task" class="niceButton" onclick="GuardarTodo();" data-dismiss="modal">GUARDAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<!-- 
+        <div class="modal fade  col-11" id="openModal" tabindex="-1" role="dialog" aria-labelledby="openModalLabel"
+        aria-hidden="true" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="openModalLabel">Ver tarea</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Tarea..." id="task-name" disabled>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Descripcion..." id="task-description" disabled>
+                    </div>
+                    <button id="save-task" class="niceButton" onclick="GuardarTodo();" data-dismiss="modal">GUARDAR</button>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    </div>
+<!-- 
+    <div class="centrado col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11 mt-5">
+
+        <img src="/img/background.png" class="mt-5 col-11" alt="Paper note background">
+    </div>
+    -->
+    <ul id="toDosList">
+    </ul>
+
+    <script src="js/Todo.js"></script>
+    <script src="js/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+    <script>
+        $(document).ready(function () {
+            $("#myModal").modal('show');
+        });
+
+    </script>
+</body>
+
+
+
+</html>
