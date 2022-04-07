@@ -24,7 +24,6 @@
         <div id="todos">
         </div>
         <button id="add-todo" class="niceButton" data-toggle="modal" data-target="#modalToDo">AGREGAR TAREA</button>
-
         <div class="modal fade  col-11" id="modalToDo" tabindex="-1" role="dialog" aria-labelledby="modalToDoLabel"
             aria-hidden="true" id="myModal">
             <div class="modal-dialog" role="document">
@@ -47,23 +46,41 @@
                 </div>
             </div>
         </div>
+
+
+        <div class="modal fade  col-11" id="openModal" tabindex="-1" role="dialog" aria-labelledby="openModalLabel"
+        aria-hidden="true" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="openModalLabel">Ver tarea</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Tarea..." id="task-name" disabled>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Descripcion..." id="task-description" disabled>
+                    </div>
+                    <button id="save-task" class="niceButton" onclick="GuardarTodo();" data-dismiss="modal">GUARDAR</button>
+                </div>
+            </div>
+        </div>
     </div>
 
+
+    </div>
+<!-- 
     <div class="centrado col-12 col-sm-12 col-md-11 col-lg-11 col-xl-11 mt-5">
 
         <img src="/img/background.png" class="mt-5 col-11" alt="Paper note background">
     </div>
+    -->
     <ul id="toDosList">
     </ul>
-
-
-
-    <!-- 
-        <div id="create-todo">
-            <input type="text" placeholder="Tarea..." id="task-name">
-            <input type="text" placeholder="Descripcion..." id="task-description">
-        </div>
-        -->
 
     <script src="js/Todo.js"></script>
     <script src="js/index.js"></script>
@@ -80,6 +97,10 @@
         $(document).ready(function () {
             $("#myModal").modal('show');
         });
+        /*
+        $(document).ready(function () {
+            $("#openModal").modal('show');
+        });*/
     </script>
 </body>
 
