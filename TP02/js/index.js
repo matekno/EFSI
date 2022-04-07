@@ -16,7 +16,6 @@ function GuardarTodo() {
     return false;
   }
 
-
   // crea un todo
   let todo = new Todo(nombre.value, desc.value);
   // agreagar el todo al array
@@ -87,15 +86,44 @@ function ToggleTodo(id) {
 
   // let i = todos.findIndex(todo => todo.id === id);
   let e = EncontrarTodoXId(id);
-  console.log(e.id);
 
   if (e.completed) {
     div_completed.style.color = 'black';
     todos[id].completed = false;
+    todos[id].finished = null;
   } else {
     div_completed.style.color = 'green';
     todos[id].completed = true;
+    todos[id].finished = new Date();
   }
+}
+
+function MostrarTodoMasRapido() {
+  const e = EncontrarTodoMasRapido();
+  console.log(e);
+
+  if (e === 0 || e.deleted == true) {
+    alert("NO SE COMPLETO NADA");
+  }
+  else{
+    alert(`El todo titulado "${e.name}" fue el completado mas rapido`);
+  }
+  
+}
+
+function EncontrarTodoMasRapido() {
+  let r = 0;
+  let e = 0;
+  todos.forEach(todo => {
+      if (todo.completed === true) {
+        let a = todo.finished - todo.created;
+        if (a > r) {
+          r = a;
+          e = EncontrarTodoXId(todo.id);
+        }
+      };
+  });
+  return e;
 }
 
 
