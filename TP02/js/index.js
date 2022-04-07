@@ -78,13 +78,17 @@ function MostrarTodo(todo) {
 function BorrarTodo(id) {
   const div_borrar = document.querySelector(`#todo-${id}`);
   div_todos.removeChild(div_borrar);
-  todos.splice(id);
+  let e = EncontrarTodoXId(id);
+  e.deleted = true;
 }
 
 function ToggleTodo(id) {
   const div_completed = document.querySelector(`#todo-${id}`);
+
+  // let i = todos.findIndex(todo => todo.id === id);
   let e = EncontrarTodoXId(id);
-  console.log(e);
+  console.log(e.id);
+
   if (e.completed) {
     div_completed.style.color = 'black';
     todos[id].completed = false;
@@ -103,11 +107,11 @@ function ValidarCamposTodo() {
 }
 
 function EncontrarTodoXId(id) {
-  let element;
-  for (let i = 0; i < todos.length; i++) {
-    if (i == id) {
-      element = todos[i];
+  let e;
+  todos.forEach(element => {
+    if (element.id == id) {
+      e = element;
     }
-  }
-  return element
+  });
+  return e;
 }

@@ -6,5 +6,6 @@ class Todo {
         this.timestamp = timestamp;
         this.completed = false;
         this.id = null;
+        this.deleted = false;
     }
 }
