@@ -30,18 +30,22 @@ function GuardarTodo() {
 
 function MostrarTodo(todo) {
   let div = document.createElement('div');
+  let testos = document.createElement('div');
   let borrar = document.createElement('button');
   let title = document.createElement('h3');
   let desc = document.createElement('p');
-  let checkbox = document.createElement('checkbox');
-  // let seeToDo = document.createElement('div')
+  /*let checkbox = document.createElement('checkbox');*/
+  //let seeToDo = document.createElement('div')
+  let article = document.createElement('article');
 
   div.id = `todo-${todo.id}`;
+  div.classList.add("sameLine");
   borrar.id = `borrar-${todo.id}`;
   title.id = `title-${todo.id}`;
   desc.id = `desc-${todo.id}`;
-  checkbox.id = `complete-${todo.id}`;
+  article.id = `complete-${todo.id}`;
   // seeToDo.id = `see-${todo.id}`;
+  article.id = `article-${todo.id}`;
 
   borrar.innerHTML = '';
   borrar.innerHTML = "Borrar";
@@ -51,24 +55,36 @@ function MostrarTodo(todo) {
   }
   title.innerText = todo.name;
   desc.innerText = todo.desc;
-  checkbox.innerHTML = '';
-  checkbox.innerHTML = `<input type="checkbox" onclick="ToggleTodo(${todo.id})">`;
+
+  article.onclick = () => {
+    ToggleTodo(todo.id)
+  }
   // seeToDo.innerHTML =
   //   `  <h1>SE ESTA MOSTRANDOOO</h1>
   //       <button type="button" class="btn justify-content-end" data-toggle="modal" data-target="#openModal">
   //       </button>
   // `;
   // /*por que no se muestra este iconnnn*/
+  article.classList.add("feature1");
+  article.innerHTML = `
+  <input type="checkbox" id="feature1"/>
+  <div>
+    <span>
+      Completar
+    </span>
+  </div>
 
+  `
 
-
-
-
-
-  div.appendChild(title);
-  div.appendChild(desc);
+  testos.appendChild(title);
+  testos.appendChild(desc);
+  testos.classList.add('spageti');
+  div.appendChild(testos);
+  
   div.appendChild(borrar);
-  div.appendChild(checkbox);
+  div.appendChild(article);
+  /*div.appendChild(checkbox);*/
+
   div_todos.appendChild(div);
 }
 
@@ -101,9 +117,9 @@ function MostrarTodoMasRapido() {
   console.log(e);
 
   if (e === 0 || e.deleted == true) {
-    alert("NO SE COMPLETO NADA");
+    alert("No se completo ninguna tarea.");
   } else {
-    alert(`El todo titulado "${e.name}" fue el completado mas rapido`);
+    alert(`El To Do "${e.name}" fue el completado mas rapido`);
   }
 
 }
