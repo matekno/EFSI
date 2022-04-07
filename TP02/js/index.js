@@ -30,6 +30,12 @@ function GuardarTodo() {
 
 function MostrarTodo(todo) {
   let div = document.createElement('div');
+  div.classList.add('card');
+  let adentro = document.createElement('div');
+  adentro.classList.add('card-body');
+
+  let botonera = document.createElement('div');
+  div.classList.add('botonera');
   let testos = document.createElement('div');
   let borrar = document.createElement('button');
   let title = document.createElement('h3');
@@ -53,6 +59,7 @@ function MostrarTodo(todo) {
   borrar.onclick = () => {
     BorrarTodo(todo.id)
   }
+
   title.innerText = todo.name;
   desc.innerText = todo.desc;
 
@@ -75,14 +82,21 @@ function MostrarTodo(todo) {
   </div>
 
   `
+  
 
   testos.appendChild(title);
   testos.appendChild(desc);
   testos.classList.add('spageti');
-  div.appendChild(testos);
+  adentro.appendChild(testos);
   
-  div.appendChild(borrar);
-  div.appendChild(article);
+  botonera.appendChild(borrar);
+  botonera.appendChild(article);
+
+  adentro.appendChild(botonera);
+
+  div.appendChild(adentro);
+
+  
   /*div.appendChild(checkbox);*/
 
   div_todos.appendChild(div);
